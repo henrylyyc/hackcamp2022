@@ -14,7 +14,7 @@ cursor.execute("CREATE TABLE IF NOT EXISTS exam_info (\
     exam_name varchar(255),\
     instructor_contact varchar(255),\
     exam_start datetime,\
-    exam_end datetime,\
+    exam_duration float,\
     last_time_checked datetime,\
     needs_help boolean,\
     started boolean,\
