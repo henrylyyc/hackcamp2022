@@ -4,26 +4,28 @@ import json
 
 app = Flask(__name__)
 
-@app.route("/<spot_id>", methods=["GET", "POST"])
-def main(spot_id):
-    """    f = open("../CREDENTIALS.json")
-        credentials = json.load(f)
-        f.close()
+@app.route("/", methods=["GET", "POST"])
+def main():
+    f = open("../CREDENTIALS.json")
+    credentials = json.load(f)
+    f.close()
 
-        database = mysql.connector.connect(**credentials["database"]) # create database object
-        cursor = database.cursor()"""
+    database = mysql.connector.connect(**credentials["database"]) # create database object
+    cursor = database.cursor()
+
+    spot_id = request.args.get("spot_id")
     print(spot_id)
+
+    cursor.execute(f"SELECT * FROM exam-data WHERE room_seat_num={int(spot_id)}")
+    for result in cursor:
+        print(result)
+
     if request.method == "POST": # https://www.geeksforgeeks.org/retrieving-html-from-data-using-flask/
         first_name = request.form.get("fname")
         last_name = request.form.get("lname")
         print(first_name)
         print(last_name)
     return render_template("index.html")
-
-@app.route('/do_thing')
-def background_process_test(): # https://stackoverflow.com/questions/42601478/flask-calling-python-function-on-button-onclick-event
-    print ("Hello")
-    return ("nothing")
 
 """cursor.close()
 database.close()"""

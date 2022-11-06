@@ -1,27 +1,8 @@
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type=text/javascript>
-        $(function() {
-          $('a#test').on('click', function(e) {
-            e.preventDefault()
-            $.getJSON('/do_thing',
-                function(data) {
-              //do nothing
-            });
-            return false;
-          });
-        });
-</script>
-
-<div class='container'>
-    <h3>Test</h3>
-        <form>
-            <a href=# id=test><button class='btn btn-default'>Test</button></a>
-        </form>
-</div>
-
 <form action="{{ url_for("main")}}" method="post">
-<label for="firstname">First Name:</label>
-<input type="text" id="firstname" name="fname" placeholder="firstname">
-<label for="lastname">Last Name:</label>
-<input type="text" id="lastname" name="lname" placeholder="lastname">
-<button type="submit">Login</button>
+<label for="exam_start">Exam start:</label>
+<input type="text" id="exam_start" name="exam_start" placeholder="{{}}">
+<label for="exam_duration">Exam duration (hours):</label>
+<input type="text" id="exam_duration" name="exam_duration" placeholder="{{}}">
+<label for="last_time_checked">Last time checked on:</label>
+<input type="text" id="last_time_checked" name="last_time_checked" placeholder="bruh">
+<button type="submit">Update fields</button>

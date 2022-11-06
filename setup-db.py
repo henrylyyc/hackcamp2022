@@ -18,7 +18,7 @@ cursor.execute("CREATE TABLE IF NOT EXISTS exam_info (\
     last_time_checked datetime,\
     needs_help boolean,\
     started boolean,\
-    room_seat_num varchar(255)\
+    room_seat_num int\
     )")
 
 cursor.execute("SHOW TABLES")
