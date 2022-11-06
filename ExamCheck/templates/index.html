@@ -1,0 +1,8 @@
+<form action="{{ url_for("main")}}" method="post">
+<label for="exam_start">Exam start:</label>
+<input type="text" id="exam_start" name="exam_start" placeholder="{{}}">
+<label for="exam_duration">Exam duration (hours):</label>
+<input type="text" id="exam_duration" name="exam_duration" placeholder="{{}}">
+<label for="last_time_checked">Last time checked on:</label>
+<input type="text" id="last_time_checked" name="last_time_checked" placeholder="bruh">
+<button type="submit">Update fields</button>
