@@ -1,3 +1,4 @@
+<h2>Check exam</h2>
 <form action="{{ url_for("main")}}" method="post">
 <label for="name">Name:</label>
 <input type="text" id="name" name="name" value="{{name}}">
@@ -27,4 +28,4 @@
 <input type="checkbox" id="started" name="started" {{'checked="checked"' if started else ""}}>
 <br>
 
-<button onclick="window.location.href = {{next_url}};" type="submit">Update fields</button>
+<button type="submit">Update fields</button>
