@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!--<link rel="stylesheet" href="style.css">-->
+        <style>
+            td{
+                border: 1px solid #ddd;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                padding-left: 5px;
+                padding-right: 5px;
+                text-align: center;
+            }
+            th{
+                padding-top: 5px;
+                padding-bottom: 5px;
+                padding-left: 5px;
+                padding-right: 5px;
+            text-align: center;
+            background-color: #1b066f;
+            color: white;
+            }
+        </style>
+        <title>Exam Monitor Dashboard</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="section">
+                <h2>Exam Monitor Dashboard</h2>
+                <table>
+                    <thead>
+                        <tr">
+                            <th>SeatNum</th>
+                            <th>studentName</th>
+                            <th>studentNum</th>
+                            <th>examName</th>
+                            <th>phoneNum</th>
+                            <th>examStart</th>
+                            <th>duration</th>
+                            <th>examEnd</th>
+                            <th>Help</th>
+                            <th>started</th>
+                            <th style="background-color: red;">FINISHED</th>
+                         
+                        </tr>
+                    </thead>
+                    <tbody method='get'>
+                        <!-- TODO: Loop through the database entries to display them in this table -->
+                        {% for d in dataDict %}
+                            <tr>
+                                <td>{{d}}</td>
+                                <td>{{dataDict[d]['studentName']}}</td>
+                                <td>{{dataDict[d]['studentNum']}}</td>
+                                <td>{{dataDict[d]['examName']}}</td>
+                                <td>{{dataDict[d]['phoneNum']}}</td>
+                                <td>{{dataDict[d]['examStart']}}</td>
+                                <td>{{dataDict[d]['duration']}}</td>
+                                <td>{{dataDict[d]['examEnd']}}</td>
+                                <td>{{dataDict[d]['needsHelp']}}</td>
+                                <td>{{dataDict[d]['started']}}</td>
+                                <td>{{dataDict[d]['isFinished']}}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
+
