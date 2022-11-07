@@ -1,1 +1,3 @@
 CREDENTIALS*
+__pycache__
+*.pyc
