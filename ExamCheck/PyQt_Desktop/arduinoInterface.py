@@ -111,8 +111,9 @@ class Ui_MainWindow(object):
         infoToSend += startTimeFormatted + endTimeFormatted
 
         serDevice = serial.Serial()
-        serDevice.port = 'COM1'
+        serDevice.port = 'COM5'
         serDevice.baudrate = 115200
+        serDevice.timeout = 0.1
         serDevice.open()
         serDevice.write(infoToSend)
 
