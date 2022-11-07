@@ -11,7 +11,7 @@ cursor = database.cursor()
 cursor.execute("CREATE TABLE IF NOT EXISTS exam_info (\
     name varchar(255),\
     student_num int,\
-    exam_name varchar(255),\
+    exam_name varchar(7),\
     instructor_contact varchar(255),\
     exam_start datetime,\
     exam_duration float,\
