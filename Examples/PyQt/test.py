@@ -29,8 +29,6 @@ class Backend(QObject):
             sleep(0.1)
 
 
-    
-
 QQuickWindow.setSceneGraphBackend('software')
 curr_time = strftime("%H:%M:%S", gmtime())
 
